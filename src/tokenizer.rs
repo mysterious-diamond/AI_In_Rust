@@ -17,7 +17,7 @@ impl Tokenizer {
         tokens
     }
 
-    pub fn decode(&self, tokens: &[u8]) -> String {
+    pub fn _decode(&self, tokens: &[u8]) -> String {
         let mut text: String = String::new();
         for token in tokens {
             text.push(*token as char);

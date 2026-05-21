@@ -68,3 +68,16 @@ pub fn standard_deviation(vec: &[f32], mean: f32) -> f32 {
 
     (sum / amount).sqrt()
 }
+
+pub fn add_elementwise(first: &[Vec<f32>], second: &[Vec<f32>]) -> Vec<Vec<f32>> {
+    let mut result: Vec<Vec<f32>> = Vec::new();
+    for i in 0..first.len() {
+        let mut row: Vec<f32> = Vec::new();
+        for j in 0..EMBEDDINGDEPTH {
+            row.push(first[i][j] + second[i][j]);
+        }
+
+        result.push(row);
+    }
+    result
+}
