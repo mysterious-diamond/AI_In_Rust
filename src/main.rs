@@ -4,10 +4,12 @@ mod attention;
 mod feedforward;
 mod layernorm;
 mod lmhead;
+mod loss;
 mod math;
 mod model;
 mod tokenizer;
 mod transformer;
+mod train;
 
 fn main() {
     let tokenizer: Tokenizer = Tokenizer::new();

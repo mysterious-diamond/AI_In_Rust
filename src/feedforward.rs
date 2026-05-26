@@ -6,8 +6,8 @@ use crate::{
 };
 
 pub struct FeedForward {
-    expansion_weights: Vec<Vec<f32>>,
-    contraction_weights: Vec<Vec<f32>>,
+    pub expansion_weights: Vec<Vec<f32>>,
+    pub contraction_weights: Vec<Vec<f32>>,
 }
 
 impl FeedForward {

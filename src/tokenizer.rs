@@ -4,7 +4,7 @@ pub const EMBEDDINGDEPTH: usize = 16;
 
 pub struct Tokenizer {}
 pub struct Embedding {
-    table: Vec<Vec<f32>>,
+    pub table: Vec<Vec<f32>>,
 }
 
 impl Tokenizer {
@@ -25,7 +25,6 @@ impl Tokenizer {
 
         text
     }
-
     pub fn new() -> Tokenizer {
         Tokenizer {}
     }

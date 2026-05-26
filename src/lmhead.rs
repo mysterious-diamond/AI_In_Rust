@@ -6,7 +6,7 @@ use crate::{
 };
 
 pub struct LMHead {
-    weights: Vec<Vec<f32>>,
+    pub weights: Vec<Vec<f32>>,
 }
 
 impl LMHead {

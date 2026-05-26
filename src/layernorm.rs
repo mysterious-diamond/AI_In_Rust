@@ -4,8 +4,8 @@ use crate::{
 };
 
 pub struct LayerNorm {
-    gamma: Vec<f32>,
-    beta: Vec<f32>,
+    pub gamma: Vec<f32>,
+    pub beta: Vec<f32>,
 }
 
 impl LayerNorm {

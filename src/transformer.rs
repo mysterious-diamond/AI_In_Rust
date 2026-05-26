@@ -3,10 +3,10 @@ use crate::{
 };
 
 pub struct TransformerBlock {
-    attention_layer: Attention,
-    first_layer_norm: LayerNorm,
-    feed_forward: FeedForward,
-    second_layer_norm: LayerNorm,
+    pub attention_layer: Attention,
+    pub first_layer_norm: LayerNorm,
+    pub feed_forward: FeedForward,
+    pub second_layer_norm: LayerNorm,
 }
 
 impl TransformerBlock {

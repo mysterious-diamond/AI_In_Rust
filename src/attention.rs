@@ -5,9 +5,9 @@ use crate::{
 use rand::{self, RngExt, rng};
 
 pub struct Attention {
-    query: Vec<Vec<f32>>,
-    key: Vec<Vec<f32>>,
-    value: Vec<Vec<f32>>,
+    pub query: Vec<Vec<f32>>,
+    pub key: Vec<Vec<f32>>,
+    pub value: Vec<Vec<f32>>,
 }
 
 impl Attention {
