@@ -8,16 +8,22 @@ mod loss;
 mod math;
 mod model;
 mod tokenizer;
-mod transformer;
 mod train;
+mod transformer;
 
 fn main() {
     let tokenizer: Tokenizer = Tokenizer::new();
-    let model: Model = Model::new();
-    let encoded: Vec<u8> = tokenizer.encode("hello");
-    let output: Vec<Vec<f32>> = model.forward(&encoded);
-    let sum: f32 = output[0].iter().sum();
+    let mut model: Model = Model::new();
 
-    println!("{}", sum);
-    println!("{:?}", output[0].len());
+    let text = "hello";
+    let input = tokenizer.encode(text);
+    let target = tokenizer.encode("ello!");
+    let before = loss::average_entropy_loss(&model.forward(&input), &target);
+    println!("Loss before: {}", before);
+
+    for step in 0..10 {
+        train::train(&mut model, &input, &target, 1e-4, 0.01);
+        let loss = loss::average_entropy_loss(&model.forward(&input), &target);
+        println!("Step {}: {}", step, loss);
+    }
 }
